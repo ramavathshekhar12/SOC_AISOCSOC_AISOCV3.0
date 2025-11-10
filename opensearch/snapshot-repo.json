@@ -1,0 +1,8 @@
+{
+  "type": "s3",
+  "settings": {
+    "bucket": "your-s3-bucket",
+    "base_path": "ai-soc-snapshots",
+    "region": "ap-south-1"
+  }
+}

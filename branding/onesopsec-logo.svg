@@ -1,0 +1,5 @@
+<svg width="220" height="40" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="40" rx="8" fill="#0f172a"/>
+  <text x="16" y="26" font-family="Inter, Arial" font-size="18" fill="#38bdf8">OneStopSec</text>
+  <text x="140" y="26" font-family="Inter, Arial" font-size="18" fill="#a78bfa">AI‑SOC</text>
+</svg>

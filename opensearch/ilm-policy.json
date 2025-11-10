@@ -1,0 +1,33 @@
+{
+  "policy": {
+    "description": "AI-SOC alerts ILM",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [
+          { "rollover": { "min_index_age": "7d", "min_primary_shard_size": "50gb" } }
+        ],
+        "transitions": [
+          { "state_name": "warm", "conditions": { "min_index_age": "14d" } }
+        ]
+      },
+      {
+        "name": "warm",
+        "actions": [
+          { "replica_count": { "number_of_replicas": 0 } }
+        ],
+        "transitions": [
+          { "state_name": "delete", "conditions": { "min_index_age": "60d" } }
+        ]
+      },
+      {
+        "name": "delete",
+        "actions": [ { "delete": {} } ]
+      }
+    ],
+    "ism_template": [
+      { "index_patterns": ["ai_soc-alerts*"], "priority": 100 }
+    ]
+  }
+}
